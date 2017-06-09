@@ -14,6 +14,8 @@ router.post('/', function(req, res, next) {
   		console.log(req.body.login_id)
   		console.log(db.admin[i].id)
   		if(req.body.login_id == db.admin[i].id && req.body.login_password == db.admin[i].password){
+  			
+
   			res.render('admin', { data: db.admin[i]});
   			return;
   		}
@@ -23,7 +25,10 @@ router.post('/', function(req, res, next) {
   	return;
   }
 
-  res.send('用户信息不匹配，请返回重新登录！');
+  res.send({
+  	status:"false",
+  	info: "用户不存在或者密码错误"
+  });
 
 
   

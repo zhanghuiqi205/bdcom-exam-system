@@ -12,9 +12,11 @@ router.post('/', function(req, res, next) {
   if(db.users){
   	for(var i = 0; i < db.users.length; i++) {
   		
-  		console.log(req.body.login_id)
-  		console.log(db.users[i].id)
+		console.log(req.body.login_id)
+		console.log(req.body.login_password)
+		console.log(db.users[i].id)
   		if(req.body.login_id == db.users[i].id && req.body.login_password == db.users[i].password){
+  			console.log(11111);
   			res.render('users', { data: db.users[i]});
   			return;
   		}
@@ -24,7 +26,10 @@ router.post('/', function(req, res, next) {
   	return;
   }
 
-  res.send('用户信息不匹配，请返回重新登录！');
+  res.send({
+  	status:"false",
+  	info: "用户不存在或者密码错误"
+  });
 
 
   

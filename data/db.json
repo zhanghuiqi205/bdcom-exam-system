@@ -10,12 +10,6 @@
     ],
     "users": [
         {
-            "id": "34",
-            "password": "er868",
-            "department": "rewerwe",
-            "role": "erwerew34"
-        },
-        {
             "id": "212234",
             "password": "12343tertert",
             "department": "渠道部",
@@ -23,12 +17,6 @@
         },
         {
             "id": "2122344",
-            "password": "12343tertert",
-            "department": "12",
-            "role": "12"
-        },
-        {
-            "id": "2122344444",
             "password": "12343tertert",
             "department": "12",
             "role": "12"
@@ -74,6 +62,60 @@
             "password": "2121",
             "department": "212",
             "role": "212121"
+        },
+        {
+            "id": "12222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "122222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "1222222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "12222222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "122222222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "1222222222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "12222222222",
+            "password": "21",
+            "department": "21",
+            "role": "21"
+        },
+        {
+            "id": "12",
+            "password": "12",
+            "department": "12",
+            "role": "12"
+        },
+        {
+            "id": "122",
+            "password": "122",
+            "department": "122",
+            "role": "122"
         }
     ],
     "exam": {
@@ -199,35 +241,6 @@
                                 "value": "2"
                             }
                         ]
-                    }
-                },
-                {
-                    "id": "00014",
-                    "name": "34",
-                    "time": "432",
-                    "is_start": "yes",
-                    "count": {
-                        "selects": {
-                            "sum": 0,
-                            "score": 0
-                        },
-                        "judges": {
-                            "sum": 0,
-                            "score": 0
-                        },
-                        "texts": {
-                            "sum": 0,
-                            "score": 0
-                        },
-                        "all": {
-                            "sum": 0,
-                            "score": 0
-                        }
-                    },
-                    "content": {
-                        "selects": [],
-                        "judges": [],
-                        "texts": []
                     }
                 },
                 {
@@ -455,7 +468,7 @@
         "course_args": {},
         "course_list": {
             "course_list_args": {
-                "sum": 10
+                "sum": 11
             },
             "course_list_content": [
                 {
@@ -469,6 +482,12 @@
                     "name": "HTML DOM 参考手册.RAR",
                     "type": "",
                     "src": "./uploadcourses/HTML DOM 参考手册.RAR"
+                },
+                {
+                    "id": "10011",
+                    "name": "chrome.dll.sig",
+                    "type": "",
+                    "src": "./uploadcourses/chrome.dll.sig"
                 }
             ]
         }

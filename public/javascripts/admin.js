@@ -226,6 +226,7 @@ $(function() {
           function(data, status) {
 
             if (data.exists) {
+            	console.log(data.exists);
               submit_result.html('<div class="alert alert-danger" role="alert">' + data.info + '</div>');
             } else {
               submit_result.html('<div class="alert alert-success" role="alert">' + data.info + '</div>');
