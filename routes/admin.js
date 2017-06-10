@@ -14,7 +14,6 @@ router.post('/', function(req, res, next) {
   		console.log(req.body.login_id)
   		console.log(db.admin[i].id)
   		if(req.body.login_id == db.admin[i].id && req.body.login_password == db.admin[i].password){
-  			
 
   			res.render('admin', { data: db.admin[i]});
   			return;

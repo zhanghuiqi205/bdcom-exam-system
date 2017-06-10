@@ -63,7 +63,7 @@
       <div  data-path='./users' class="btn btn-info pull-right" onclick="submitLogonInfo(this)">考生登录</div>
     </div>
     <div class="col-xs-6">
-      <button type="submit" class="btn btn-success" onclick="login_form.action='./admin';login_form.submit()">管理员登录</button>
+      <div  data-path='./admin' class="btn btn-success" onclick="submitLogonInfo(this)">管理员登录</div>
     </div>
   </div>
  </form>
@@ -120,12 +120,6 @@
  <script src="/bootstrap-3.3.7-dist/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	function submitLogonInfo(thiz){
-		   console.log(thiz);
-//		   $(thiz).click(function(e){
-//		   	      e.preventDefault();
-//                console.log(login_form);
-//                console.log(form);
-//alert(111)
 					var data = {};
 					var form = $(thiz).parents('form');
 				    var items = form.find('input,textarea');
@@ -142,21 +136,15 @@
 				        }
 					$.post(thiz.getAttribute('data-path'),data,
 		          function(data, status) {
-		            if (data.status == 'false') {
-		            	
+		            if (data.status == 'false'){
 		              submit_result.html('<div class="alert alert-danger" role="alert">' + data.info + '</div>');
 		            } else {
-		            //	alert( data.status)
 		              form[0].action = thiz.getAttribute('data-path');
 		              form[0].submit();
 		            }
 		
-		        })
-					
-					
-		return false;
-//		   });
-		
+		        })					
+		     return false;	
 	}
 	
 	
