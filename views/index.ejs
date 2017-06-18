@@ -63,7 +63,7 @@
       <div  data-path='./users' class="btn btn-info pull-right" onclick="submitLogonInfo(this)">考生登录</div>
     </div>
     <div class="col-xs-6">
-      <div  data-path='./admin' class="btn btn-success" onclick="submitLogonInfo(this)">管理员登录</div>
+      <div data-path='./admin' class="btn btn-success" onclick="submitLogonInfo(this)">管理员登录</div>
     </div>
   </div>
  </form>
@@ -123,9 +123,7 @@
 					var data = {};
 					var form = $(thiz).parents('form');
 				    var items = form.find('input,textarea');
-				    console.log(items);
 				    var submit_result = form.find('.submit-result');
-				    
 					for (var i = 0; i < items.length; i++) {
 						  if (items[i].value === '') {
 				            submit_result.html('<div class="alert alert-danger" role="alert">请填写完整信息！</div>') ;
@@ -134,24 +132,16 @@
 				          	data[items[i].name] = items[i].value;
 				          }
 				        }
-					$.post(thiz.getAttribute('data-path'),data,
-		          function(data, status) {
-		            if (data.status == 'false'){
-		              submit_result.html('<div class="alert alert-danger" role="alert">' + data.info + '</div>');
-		            } else {
-		              form[0].action = thiz.getAttribute('data-path');
-		              form[0].submit();
-		            }
-		
-		        })					
-		     return false;	
+					$.post(thiz.getAttribute('data-path'),data,function(data, status) {
+			            if (data.status == 'false') {		            	
+			              submit_result.html('<div class="alert alert-danger" role="alert">' + data.info + '</div>');
+			            } else {
+			              form[0].action = thiz.getAttribute('data-path');
+			              form[0].submit();
+			            }		
+		            });					
+		       return false;	
 	}
-	
-	
-	
-	
-	
-	
 </script>
 </body>
 </html>

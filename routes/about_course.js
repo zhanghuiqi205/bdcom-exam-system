@@ -4,33 +4,24 @@ var fs = require('fs');
 var file ="../data/db.json";
 var multiparty = require('multiparty');
 var util = require('util');
-
+var checkLogin = require('./inc/checkLogin');
 
 /* GET admin listing. */
 router.get('/', function(req, res, next) {
   //读取数据库文件
   var db =JSON.parse(fs.readFileSync(file));
-  //先验证管理员身份
-  if(db.admin){
-    for(var i = 0; i < db.admin.length; i++) {
-      
-      // console.log(req.query.login_id)
-      // console.log(db.admin[i].id)
-      if(req.query.login_id == db.admin[i].id && req.query.login_password == db.admin[i].password){
-        res.send(db.course.course_list.course_list_content);
-        return;
-      }
-    }
-  }else {
-    res.send('数据库出错！');
-    return;
+  //验证管理员身份
+  if(checkLogin(db.admin, req.query.login_id, req.query.login_password)){
+      res.send(db.course.course_list.course_list_content);
+      return;
   }
-
+  //验证用户登录
+  if(checkLogin(db.users, req.query.login_id, req.query.login_password)){
+      res.send(db.course.course_list.course_list_content);
+      return;
+  }
   //res.send(req.query);
   res.send('用户信息不匹配，请返回重新登录！');
-
-
-  
 });
 
 
@@ -47,14 +38,13 @@ router.post('/', function(req, res, next) {
   		if(req.body.login_id === db.admin[i].id && req.body.login_password === db.admin[i].password){
         //先从数据库获取课件列表
         var course_list = db.course.course_list.course_list_content; 
-
         //当为删除课件操作时
         if(typeof req.body.delete_course_id !== 'undefined'){
           console.log('正在进行删除课件操作');
           console.log(req.body.delete_course_id)
            for(var j = 0; j < course_list.length; j++){
              if(course_list[j].id === req.body.delete_course_id){
-              course_list.splice(j,1);
+              course_list.splice(j,1);       //删除数据中的元素
               break;
             }
             
@@ -111,17 +101,15 @@ router.post('/', function(req, res, next) {
 
   //res.send(req.body);
   res.send('课件信息不匹配，请返回重新登录！');
-
-
   
 });
 
 
 
 
-router.post('/upload',function(req, res, next) {
+router.post('/upload',function(req, res, next) {      //上传课件
   //读取数据库文件
-  var db =JSON.parse(fs.readFileSync(file));
+  var db =JSON.parse(fs.readFileSync(file));          
 
   var form = new multiparty.Form();
     //设置编辑

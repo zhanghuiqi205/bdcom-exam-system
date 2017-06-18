@@ -8,7 +8,19 @@
             "note": "a admin"
         }
     ],
+    "public_note": [
+        {
+            "content": "博大集团2017年例行大会\n",
+            "time": "2017-06-18"
+        }
+    ],
     "users": [
+        {
+            "id": "34",
+            "password": "er868",
+            "department": "rewerwe",
+            "role": "erwerew34"
+        },
         {
             "id": "212234",
             "password": "12343tertert",
@@ -17,6 +29,12 @@
         },
         {
             "id": "2122344",
+            "password": "12343tertert",
+            "department": "12",
+            "role": "12"
+        },
+        {
+            "id": "2122344444",
             "password": "12343tertert",
             "department": "12",
             "role": "12"
@@ -64,58 +82,34 @@
             "role": "212121"
         },
         {
-            "id": "12222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
+            "id": "1",
+            "password": "1",
+            "department": "1",
+            "role": "1"
         },
         {
-            "id": "122222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
-        },
-        {
-            "id": "1222222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
-        },
-        {
-            "id": "12222222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
-        },
-        {
-            "id": "122222222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
-        },
-        {
-            "id": "1222222222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
-        },
-        {
-            "id": "12222222222",
-            "password": "21",
-            "department": "21",
-            "role": "21"
+            "id": "13232",
+            "password": "1",
+            "department": "1",
+            "role": "1"
         },
         {
             "id": "12",
-            "password": "12",
             "department": "12",
+            "password": "1234",
             "role": "12"
         },
         {
-            "id": "122",
-            "password": "122",
-            "department": "122",
-            "role": "122"
+            "id": "123",
+            "password": "123",
+            "department": "123",
+            "role": "123"
+        },
+        {
+            "id": "232",
+            "password": "32",
+            "department": "32",
+            "role": "232"
         }
     ],
     "exam": {
@@ -188,7 +182,7 @@
                     "id": "002",
                     "name": "2月技术考核",
                     "time": "60",
-                    "is_start": "yes",
+                    "is_start": "no",
                     "content": {
                         "selects": [
                             {
@@ -244,10 +238,39 @@
                     }
                 },
                 {
-                    "id": "00017",
+                    "id": "00014",
                     "name": "34",
                     "time": "432",
                     "is_start": "yes",
+                    "count": {
+                        "selects": {
+                            "sum": 0,
+                            "score": 0
+                        },
+                        "judges": {
+                            "sum": 0,
+                            "score": 0
+                        },
+                        "texts": {
+                            "sum": 0,
+                            "score": 0
+                        },
+                        "all": {
+                            "sum": 0,
+                            "score": 0
+                        }
+                    },
+                    "content": {
+                        "selects": [],
+                        "judges": [],
+                        "texts": []
+                    }
+                },
+                {
+                    "id": "00017",
+                    "name": "34",
+                    "time": "432",
+                    "is_start": "no",
                     "count": {
                         "selects": {
                             "sum": 0,
@@ -468,7 +491,7 @@
         "course_args": {},
         "course_list": {
             "course_list_args": {
-                "sum": 11
+                "sum": 10
             },
             "course_list_content": [
                 {
@@ -482,12 +505,44 @@
                     "name": "HTML DOM 参考手册.RAR",
                     "type": "",
                     "src": "./uploadcourses/HTML DOM 参考手册.RAR"
+                }
+            ]
+        }
+    },
+    "message": {
+        "message_args": {},
+        "message_list": {
+            "message_list_args": {
+                "sum": 14
+            },
+            "message_list_content": [
+                {
+                    "id": "50011",
+                    "title": "中国梦",
+                    "content": "我的中国梦",
+                    "time": "2017-06-18 20:09:12",
+                    "name": "12"
                 },
                 {
-                    "id": "10011",
-                    "name": "chrome.dll.sig",
-                    "type": "",
-                    "src": "./uploadcourses/chrome.dll.sig"
+                    "id": "50012",
+                    "title": "中国梦1",
+                    "content": "我的中国梦1",
+                    "time": "2017-06-18 20:09:17",
+                    "name": "12"
+                },
+                {
+                    "id": "50013",
+                    "title": "中国梦12",
+                    "content": "我的中国梦12",
+                    "time": "2017-06-18 20:09:22",
+                    "name": "12"
+                },
+                {
+                    "id": "50014",
+                    "title": "中国梦123",
+                    "content": "我的中国梦123",
+                    "time": "2017-06-18 20:09:41",
+                    "name": "12"
                 }
             ]
         }
